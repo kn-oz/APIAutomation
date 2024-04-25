@@ -3,12 +3,13 @@ package baseUrl;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
+import org.testng.annotations.BeforeClass;
 
 public class JsonPlaceHolderBaseUrl {
 
     protected RequestSpecification specJsonPlace;
 
-    @Before
+    @BeforeClass
     public void setUp(){
 
         specJsonPlace = new RequestSpecBuilder()
