@@ -48,6 +48,8 @@ public class C23_Get_DeSerialization extends DummyBaseUrl {
 
         HashMap<String,Object> respMap = response.as(HashMap.class);
 
+        assertEquals(testDataDummy.basariliStatuscode,response.getStatusCode());
+
        assertEquals(((Map)(expData.get("data"))).get("id"),((Map)(respMap.get("data"))).get("id"));
        assertEquals(((Map)(expData.get("data"))).get("employee_name"),((Map)(respMap.get("data"))).get("employee_name"));
        assertEquals(((Map)(expData.get("data"))).get("employee_salary"),((Map)(respMap.get("data"))).get("employee_salary"));
