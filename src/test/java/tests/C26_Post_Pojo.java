@@ -11,6 +11,7 @@ import pojos.BookingdatesPOJO;
 import pojos.HerokuappExpBodyPOJO;
 
 import static io.restassured.RestAssured.given;
+import static junit.framework.TestCase.assertEquals;
 
 public class C26_Post_Pojo extends HerokuAppBaseUrl {
 
@@ -68,12 +69,13 @@ public class C26_Post_Pojo extends HerokuAppBaseUrl {
         HerokuappExpBodyPOJO responsePOJO = response.as(HerokuappExpBodyPOJO.class);
 
 
-        Assert.assertEquals(expData.getBooking().getFirstname(),responsePOJO.getBooking().getFirstname());
-        Assert.assertEquals(expData.getBooking().getLastname(),responsePOJO.getBooking().getLastname());
-        Assert.assertEquals(expData.getBooking().getTotalprice(),responsePOJO.getBooking().getTotalprice());
-        Assert.assertEquals(expData.getBooking().getBookingdates().getCheckin(),responsePOJO.getBooking().getBookingdates().getCheckin());
-        Assert.assertEquals(expData.getBooking().getBookingdates().getCheckout(),responsePOJO.getBooking().getBookingdates().getCheckout());
-        Assert.assertEquals(expData.getBooking().getAdditionalneeds(),responsePOJO.getBooking().getAdditionalneeds());
+        assertEquals(expData.getBooking().getFirstname(),responsePOJO.getBooking().getFirstname());
+        assertEquals(expData.getBooking().getLastname(),responsePOJO.getBooking().getLastname());
+        assertEquals(expData.getBooking().getTotalprice(),responsePOJO.getBooking().getTotalprice());
+        assertEquals(expData.getBooking().getBookingdates().getCheckin(),responsePOJO.getBooking().getBookingdates().getCheckin());
+        assertEquals(expData.getBooking().getBookingdates().getCheckout(),responsePOJO.getBooking().getBookingdates().getCheckout());
+        assertEquals(expData.getBooking().getAdditionalneeds(),responsePOJO.getBooking().getAdditionalneeds());
+        assertEquals(expData.getBooking().isDepositpaid(),responsePOJO.getBooking().isDepositpaid());
 
 
 
